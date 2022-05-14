@@ -1,6 +1,12 @@
 
 <?php
-session_start();
+$ch= $_POST["ch"];
+$valider= $_POST["valider"];  
+ if( isset($valider)){
+     echo" Vous avez choché les cases suivantes:<br/>";
+     echo @implode(" - ",$ch );
+     echo "<hr />";
+}
 ?>
 
 
@@ -11,6 +17,7 @@ session_start();
     <meta charset="UTF-8">
     <title>MLIUC Matieres</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="formu2.css">
 </head>
 
@@ -188,20 +195,42 @@ session_start();
 
                                 <div class="card-body" >
                                     <table width="100%">
-                                        <thead>
+                                        <!-- <thead>
                                             <tr>
                                                 <td>Matière</td>
                                                 <td>Module</td>
                                                 <td>Choisir</td>
                                             </tr>
-                                        </thead>
+                                        </thead> -->
                                         <tbody>
+                                            <form name="fo1" method="post" action=""  > 
 
-                                            <td>Projet Dev Appli - Analyse</td>
+                                            <input type="checkbox" name="ch[]" value="pdaa" />  Projet deve appli -Analyse </br>
+                                            <input type="checkbox" name="ch[]" value="pdar" />  Projet deve appli -Realisation </br>
+                                            <input type="checkbox" name="ch[]" value="systemeC" />  C et programmation système</br>
+                                            <input type="checkbox" name="ch[]" value="reseau" />  Réseaux TCP/IP</br>
+                                            <input type="checkbox" name="ch[]" value="matlab" /> Initialisation à MATLAB</br>
+                                            <input type="checkbox" name="ch[]" value="analyse_fourier" />  Analyse de Fourier</br>
+                                            <input type="checkbox" name="ch[]" value="stat" />  Probabilités et statistiques</br>
+                                            <input type="checkbox" name="ch[]" value="electronique" />  Electronique</br>
+                                            <input type="checkbox" name="ch[]" value="tgp" />  Technique de gestion de projet</br>
+                                            <input type="checkbox" name="ch[]" value="si" />  Système d'information de l'entreprise</br>
+                                            <input type="checkbox" name="ch[]" value="droit" />  Présentation juridique et institutionnelle</br>
+                                            <input type="checkbox" name="ch[]" value="economie" />  Economie d'entreprise</br>
+                                            <input type="checkbox" name="ch[]" value="projet_pro" />  Projet professionel</br>
+                                            <input type="checkbox" name="ch[]" value="anglais" />  Anglais</br>
+                                            <input type="checkbox" name="ch[]" value="chinois" />  Langue_vivante2</br>
+                                            <input type="submit" name="valider" value="Enregistrer"/>
+
+                                                
+                                            </form
+
+                                          <tr> 
+                                            <!-- <td>Projet Dev Appli - Analyse</td>
                                             <td><span class="status purple"></span> Informatique</td>
                                             <td> <input type="checkbox" name="colors" value="projet dev appli" /></td>
                                             </tr>
-                                            <tr>
+                                        <tr>
                                                 <td>Projet Dev Appli - Realisation</td>
                                                 <td><span class="status purple"></span> Informatique</td>
                                                 <td> <input type="checkbox" name="colors" value="projet dev realisation" /></td>
@@ -270,15 +299,15 @@ session_start();
                                                 <td>Langue vivante 2</td>
                                                 <td><span class="status pink"></span> SHES</td>
                                                 <td> <input type="checkbox" name="colors" value="Langue vivante 2" /></td>
-                                            </tr>
+                                            </tr> --> 
 
                                         </tbody>
                                     </table>
                                 </div>
-                                <p> <a href="formu2.html" > <input type="button"  class="but" value="Choisir" style="padding: 40px 30px;margin-left: 200px;
+                                <!-- <p> <a href="formu2.html" > <input type="button"  class="but" value="Choisir" style="padding: 40px 30px;margin-left: 200px;
                                     border: none;
                                     padding: 10px 20px;background-color: rgb(7, 216, 7);font: 1em sans-serif;"> </a>
-                                </p>
+                                </p> -->
                             </div>
                         </div>
 

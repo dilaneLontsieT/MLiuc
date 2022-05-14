@@ -3,6 +3,7 @@
 <head>
     <title>Justification</title>
     <link rel="stylesheet" type="text/css" href="justif.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 </head>
 <body >
      <form action="verification-admin.php" method="post">

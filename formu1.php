@@ -20,6 +20,7 @@
     <meta charset="UTF-8">
     <title>MLIUC Matieres</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
     <link rel="stylesheet" href="formu1.css">
 </head>
 
@@ -126,7 +127,7 @@
                                             <input type="checkbox" name="ch[]" value="Connaissance" />  Connaissance de l'entreprise</br>
                                             <input type="checkbox" name="ch[]" value="sensibilisation" />  Sensibilisation à la securité</br>
                                             <input type="checkbox" name="ch[]" value="anglais" />  Anglais</br>
-                                            <input type="checkbox" name="ch[]" value="chinois" />  chinois</br>
+                                            <input type="checkbox" name="ch[]" value="chinois" />  Langue_vivante1</br>
                                             <input type="submit" name="valider" value="Enregistrer"/>
 
                                                   

@@ -1,8 +1,9 @@
 
 <?php
-$ch= $_POST["ch"];
-$valider= $_POST["valider"];  
+ 
  if( isset($valider)){
+    $ch= $_POST["ch"];
+    $valider= $_POST["valider"]; 
      echo" Vous avez choché les cases suivantes:<br/>";
      echo @implode(" - ",$ch );
      echo "<hr />";
@@ -40,7 +41,7 @@ $valider= $_POST["valider"];
                 </li>
             
                 <li>
-                    <a href="updates.php"><span class="las la-business-time" ></span>
+                    <a href="updatesE.php"><span class="las la-business-time" ></span>
                     <span>Mise à jour </span></a>
                 </li>
                 <li>
@@ -48,7 +49,7 @@ $valider= $_POST["valider"];
                     <span>Profil</span></a>
                 </li>
                   <li>
-                    <a href="deconnexion.php"><span class="las la-user-graduate" ></span>
+                    <a href="deconnexion.php"><span class="las la-igloo" ></span>
                     <span>Deconnexion</span></a>
                 </li> 
             </ul>
@@ -205,21 +206,21 @@ $valider= $_POST["valider"];
                                         <tbody>
                                             <form name="fo1" method="post" action=""  > 
 
-                                            <input type="checkbox" name="ch[]" value="pdaa" />  Projet deve appli -Analyse </br>
-                                            <input type="checkbox" name="ch[]" value="pdar" />  Projet deve appli -Realisation </br>
-                                            <input type="checkbox" name="ch[]" value="systemeC" />  C et programmation système</br>
-                                            <input type="checkbox" name="ch[]" value="reseau" />  Réseaux TCP/IP</br>
-                                            <input type="checkbox" name="ch[]" value="matlab" /> Initialisation à MATLAB</br>
+                                            <input type="checkbox" name="ch[]" value="Projet deve appli -Analyse" />  Projet deve appli -Analyse </br>
+                                            <input type="checkbox" name="ch[]" value="Projet deve appli -Realisation" />  Projet deve appli -Realisation </br>
+                                            <input type="checkbox" name="ch[]" value="C et programmation système" />  C et programmation système</br>
+                                            <input type="checkbox" name="ch[]" value="Réseaux TCP/IP" />  Réseaux TCP/IP</br>
+                                            <input type="checkbox" name="ch[]" value="Initialisation à MATLAB" /> Initialisation à MATLAB</br>
                                             <input type="checkbox" name="ch[]" value="analyse_fourier" />  Analyse de Fourier</br>
-                                            <input type="checkbox" name="ch[]" value="stat" />  Probabilités et statistiques</br>
+                                            <input type="checkbox" name="ch[]" value="Probabilités et statistiques" />  Probabilités et statistiques</br>
                                             <input type="checkbox" name="ch[]" value="electronique" />  Electronique</br>
-                                            <input type="checkbox" name="ch[]" value="tgp" />  Technique de gestion de projet</br>
-                                            <input type="checkbox" name="ch[]" value="si" />  Système d'information de l'entreprise</br>
-                                            <input type="checkbox" name="ch[]" value="droit" />  Présentation juridique et institutionnelle</br>
-                                            <input type="checkbox" name="ch[]" value="economie" />  Economie d'entreprise</br>
-                                            <input type="checkbox" name="ch[]" value="projet_pro" />  Projet professionel</br>
-                                            <input type="checkbox" name="ch[]" value="anglais" />  Anglais</br>
-                                            <input type="checkbox" name="ch[]" value="chinois" />  Langue_vivante2</br>
+                                            <input type="checkbox" name="ch[]" value="Technique de gestion de projet" />  Technique de gestion de projet</br>
+                                            <input type="checkbox" name="ch[]" value="Système d'information de l'entreprise" />  Système d'information de l'entreprise</br>
+                                            <input type="checkbox" name="ch[]" value="Présentation juridique et institutionnelle" />  Présentation juridique et institutionnelle</br>
+                                            <input type="checkbox" name="ch[]" value="Economie d'entreprise" />  Economie d'entreprise</br>
+                                            <input type="checkbox" name="ch[]" value="Projet professionel" />  Projet professionel</br>
+                                            <input type="checkbox" name="ch[]" value="Anglais" />  Anglais</br>
+                                            <input type="checkbox" name="ch[]" value="Langue_vivante2" />  Langue_vivante2</br>
                                             <input type="submit" name="valider" value="Enregistrer"/>
 
                                                 
@@ -302,7 +303,31 @@ $valider= $_POST["valider"];
                                             </tr> --> 
 
                                         </tbody>
+
                                     </table>
+                                    <?php    
+        if( isset($_POST["valider"])){
+            $ch=$_POST["ch"];
+            $valider= $_POST["valider"];  
+            echo" Vous avez choché les cases suivantes:<br/>";
+            
+            foreach($_POST["ch"] as $value){
+                echo " ".$value.'<br/>';
+            }
+            echo "<hr />";
+
+        $con=mysqli_connect('localhost','root','','mliuc');
+
+        if(mysqli_connect_errno())
+            {
+	        echo 'Failed to connect '.mysqli_connect_error();
+            }
+
+            // $sql="INSERT INTO matieres"
+       }
+     
+?> 
+
                                 </div>
                                 <!-- <p> <a href="formu2.html" > <input type="button"  class="but" value="Choisir" style="padding: 40px 30px;margin-left: 200px;
                                     border: none;

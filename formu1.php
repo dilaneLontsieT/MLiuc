@@ -1,16 +1,5 @@
 
-<?php   
-      
-     
-       $ch= $_POST["ch"];
-       $valider= $_POST["valider"];  
-        if( isset($valider)){
-            echo" Vous avez choché les cases suivantes:<br/>";
-            echo @implode(" - ",$ch );
-            echo "<hr />";
-       }
-     
-?>    
+   
 
 
 <!DOCTYPE html>
@@ -43,7 +32,7 @@
                 </li>
             
                 <li>
-                    <a href="updates.php"><span class="las la-business-time" ></span>
+                    <a href="updatesE.php"><span class="las la-business-time" ></span>
                     <span>Mise à jour </span></a>
                 </li>
                 <li>
@@ -51,7 +40,7 @@
                     <span>Profil</span></a>
                 </li>
                   <li>
-                    <a href="deconnexion.php"><span class="las la-user-graduate" ></span>
+                  <a href="deconnexion.php"><span class="las la-igloo" ></span>
                     <span>Deconnexion</span></a>
                 </li> 
             </ul>
@@ -115,20 +104,20 @@
                                      
                                        <form name="fo1" method="post" action=""  > 
 
-                                            <input type="checkbox" name="ch[]" value="algebreB" />  Algèbre de Boole </br>
-                                            <input type="checkbox" name="ch[]" value="archi" />  Architecture des ordinateurs</br>
-                                            <input type="checkbox" name="ch[]" value="systemeE" />  systeme d'exploitation</br>
-                                            <input type="checkbox" name="ch[]" value="poo" />  Programmation orientée objet</br>
-                                            <input type="checkbox" name="ch[]" value="java" />  Java avancé</br>
-                                            <input type="checkbox" name="ch[]" value="baseD" />  Base de données</br>
-                                            <input type="checkbox" name="ch[]" value="uml" />  Methode UML</br>
-                                            <input type="checkbox" name="ch[]" value="web" />  Developpement web</br>
+                                            <input type="checkbox" name="ch[]" value="Algèbre_de_Boole" />  Algèbre de Boole </br>
+                                            <input type="checkbox" name="ch[]" value="Architecture_des_ordinateurs" />  Architecture des ordinateurs</br>
+                                            <input type="checkbox" name="ch[]" value="systeme_d_exploitation" />  systeme d'exploitation</br>
+                                            <input type="checkbox" name="ch[]" value="Programmation_orientée_objet" />  Programmation orientée objet</br>
+                                            <input type="checkbox" name="ch[]" value="Java_avancé" />  Java avancé</br>
+                                            <input type="checkbox" name="ch[]" value="Base_de_données" />  Base de données</br>
+                                            <input type="checkbox" name="ch[]" value="Methode_UML" />  Methode UML</br>
+                                            <input type="checkbox" name="ch[]" value="Developpement_web" />  Developpement web</br>
                                             <input type="checkbox" name="ch[]" value="communication" />  Communication</br>
-                                            <input type="checkbox" name="ch[]" value="Connaissance" />  Connaissance de l'entreprise</br>
-                                            <input type="checkbox" name="ch[]" value="sensibilisation" />  Sensibilisation à la securité</br>
+                                            <input type="checkbox" name="ch[]" value="Connaissance_de_l'entreprise" />  Connaissance de l'entreprise</br>
+                                            <input type="checkbox" name="ch[]" value="Sensibilisation_à_la_securité" />  Sensibilisation à la securité</br>
                                             <input type="checkbox" name="ch[]" value="anglais" />  Anglais</br>
-                                            <input type="checkbox" name="ch[]" value="chinois" />  Langue_vivante1</br>
-                                            <input type="submit" name="valider" value="Enregistrer"/>
+                                            <input type="checkbox" name="ch[]" value="Langue_vivante1" />  Langue_vivante1</br>
+                                            <input type="submit" name="valider" value="valider"/>
 
                                                   
                                         </form
@@ -136,7 +125,28 @@
                                     </tbody> 
                                   
                                 </table>
+                                <?php    
+        if( isset($_POST["valider"])){
+            $ch=$_POST["ch"];
+            $valider= $_POST["valider"];  
+            echo" Vous avez choché les cases suivantes:<br/>";
+            
+            foreach($_POST["ch"] as $value){
+                echo " ".$value.'<br/>';
+            }
+            echo "<hr />";
 
+        $con=mysqli_connect('localhost','root','','mliuc');
+
+        if(mysqli_connect_errno())
+            {
+	        echo 'Failed to connect '.mysqli_connect_error();
+            }
+
+            // $sql="INSERT INTO matieres"
+       }
+     
+?> 
                    </div>
                         </div>
                         
